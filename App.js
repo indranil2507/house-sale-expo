@@ -2,25 +2,16 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Home from './Screens/Home';
-// import AppLoading from 'expo-app-loading';
-// import { useFonts, Inter_900Black } from '@expo-google-fonts/inter';
+import HomeStack from './navigators/HomeNavigation'
+import { NavigationContainer} from '@react-navigation/native'
 
-// export default function App() {
-//   let [fontsLoaded] = useFonts({
-//     Inter_900Black,
-//   });
-
-//   if (!fontsLoaded) {
-//     // return <AppLoading />;
-//     return <Text >Loading</Text>;
-//   }
-
-//   return <Text style={{ fontFamily: 'Inter_900Black' }}>Inter Black</Text>;
-// }
 
 export default function App() {
   return (
-     <Home/>
+    <NavigationContainer>
+      <HomeStack/>
+    </NavigationContainer>
+    //  <Home/>
   );
 }
 

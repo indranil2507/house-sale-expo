@@ -1,11 +1,11 @@
 import React from "react";
-import { ImageBackground, StyleSheet, Text, View } from "react-native";
+import { TouchableOpacity,ImageBackground, StyleSheet, Text, View } from "react-native";
 import colors from "../styles"
 import { useFonts, Inter_900Black,DMSans_400Regular } from '@expo-google-fonts/dm-sans';
 // const image = { uri: "https://reactjs.org/logo-og.png" };
 
 
-export default function Home(){
+export default function Home({navigation}){
     let [fontsLoaded] = useFonts({
         DMSans_400Regular,
       });
@@ -22,13 +22,13 @@ export default function Home(){
         <View style={styles.textcontainer}>
             <Text style={styles.heading}>Check our your comfotable home !</Text>
             <Text style={styles.subheading}>Enjoy the comfort of affordable and cosy rentals with the peace of mind of booking with the app</Text>
-            <View style={styles.button}>
+            <TouchableOpacity style={styles.button} onPress={()=>navigation.navigate("Listings")}>
                 <Text style={{color:colors.white,fontSize:18,}}>
                 Get Started
                 </Text>
                 
     
-            </View>
+            </TouchableOpacity>
         </View>
       </View>
 
